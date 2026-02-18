@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visit Weekend — University of Utah</title>
+    <link rel="icon" href="UU Logo-CTR_RGB.svg" type="image/svg+xml">
+    <meta name="description"
+        content="Official schedule for the University of Utah KSoC Visit Weekend, February 19–21, 2026." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- Sticky Contact Bar -->
+    <div class="contact-bar">
+        <span class="contact-label">Questions?</span>
+        <div class="contact-group">
+            <button class="contact-btn" onclick="toggleContact('dylan')" aria-expanded="false" id="btn-dylan">
+                Contact Dylan <span class="chevron">▾</span>
+            </button>
+            <div class="contact-detail" id="dylan">
+                <a href="tel:+1XXXXXXXXXX">📞 (763) 220-3275</a>
+            </div>
+        </div>
+        <div class="contact-group">
+            <button class="contact-btn" onclick="toggleContact('colin')" aria-expanded="false" id="btn-colin">
+                Contact Colin <span class="chevron">▾</span>
+            </button>
+            <div class="contact-detail" id="colin">
+                <a href="tel:+1XXXXXXXXXX">📞 (301) 337-9140</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <img src="UU Logo-HRZ_RED.svg" alt="University of Utah" class="uu-logo" />
+        <div class="header-text">
+            <h1>Visit Weekend</h1>
+            <p class="header-sub">Kahlert School of Computing · Feb 19–21, 2026</p>
+        </div>
+    </header>
+
+    <!-- ── Live Calendar Widget ── -->
+    <div class="widget-wrap">
+        <div class="cal-widget" id="calWidget">
+
+            <div class="cal-left">
+                <div class="cal-month">February 2026</div>
+                <div class="cal-grid">
+                    <span class="cal-dow">Su</span><span class="cal-dow">Mo</span><span class="cal-dow">Tu</span>
+                    <span class="cal-dow">We</span><span class="cal-dow">Th</span><span class="cal-dow">Fr</span>
+                    <span class="cal-dow">Sa</span>
+                    <span class="cal-day">1</span><span class="cal-day">2</span><span class="cal-day">3</span>
+                    <span class="cal-day">4</span><span class="cal-day">5</span><span class="cal-day">6</span>
+                    <span class="cal-day">7</span>
+                    <span class="cal-day">8</span><span class="cal-day">9</span><span class="cal-day">10</span>
+                    <span class="cal-day">11</span><span class="cal-day">12</span><span class="cal-day">13</span>
+                    <span class="cal-day">14</span>
+                    <span class="cal-day">15</span><span class="cal-day">16</span><span class="cal-day">17</span>
+                    <span class="cal-day">18</span>
+                    <span class="cal-day event-day" data-day="19" id="calDay19" onclick="selectDay('2026-02-19')"
+                        role="button" tabindex="0" aria-label="February 19 – Thursday">19</span>
+                    <span class="cal-day event-day" data-day="20" id="calDay20" onclick="selectDay('2026-02-20')"
+                        role="button" tabindex="0" aria-label="February 20 – Friday">20</span>
+                    <span class="cal-day event-day" data-day="21" id="calDay21" onclick="selectDay('2026-02-21')"
+                        role="button" tabindex="0" aria-label="February 21 – Saturday">21</span>
+                    <span class="cal-day">22</span><span class="cal-day">23</span><span class="cal-day">24</span>
+                    <span class="cal-day">25</span><span class="cal-day">26</span><span class="cal-day">27</span>
+                    <span class="cal-day">28</span>
+                </div>
+                <div class="cal-legend">
+                    <span class="legend-dot"></span><span>Tap a date to filter</span>
+                </div>
+            </div>
+
+            <div class="cal-right">
+                <div class="cal-right-header">
+                    <div class="cal-right-label" id="calRightLabel">Upcoming Events</div>
+                    <button class="cal-clear-btn" id="calClearBtn" onclick="clearDayFilter()" style="display:none"
+                        aria-label="Clear filter">✕ All days</button>
+                </div>
+                <div class="cal-events-list" id="calEventsList"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ── Getting Around ── -->
+    <div class="ga-section">
+        <div class="ga-title-row">
+            <span class="ga-section-title">🚌 Getting Around</span>
+        </div>
+        <div class="ga-blocks">
+
+            <!-- Block 1: Public Transportation -->
+            <div class="ga-block">
+                <button class="ga-block-toggle" id="ga-toggle-transit" onclick="toggleGaBlock('transit')"
+                    aria-expanded="false" aria-controls="ga-body-transit">
+                    <span class="ga-block-toggle-label">Public Transportation <span
+                            class="gh-block-sub">(TRAX)</span></span>
+                    <span class="ga-block-chevron">▾</span>
+                </button>
+                <div class="ga-block-body" id="ga-body-transit" hidden>
+
+                    <!-- Core Fares -->
+                    <div class="gh-sub-title">Core Fares</div>
+                    <div class="gh-fare-table">
+                        <div class="gh-fare-row">
+                            <span class="gh-fare-label">One-way</span>
+                            <span class="gh-fare-price">$2.50</span>
+                        </div>
+                        <div class="gh-fare-row">
+                            <span class="gh-fare-label">Day Pass</span>
+                            <span class="gh-fare-price">$5.00</span>
+                        </div>
+                    </div>
+                    <div class="gh-uta-link-wrap">
+                        Visit <a href="https://www.rideuta.com/" target="_blank" rel="noopener"
+                            class="gh-link">rideuta.com</a> for maps &amp; details.
+                    </div>
+
+                    <!-- Free Fare Zone -->
+                    <div class="gh-info-card">
+                        <div class="gh-info-header">
+                            <span class="gh-info-icon">🚌</span>
+                            <span class="gh-info-card-title">Free Fare Zone</span>
+                        </div>
+                        <p class="gh-info-body">You can ride TRAX or buses for <strong>free</strong> if you
+                            enter and exit within the downtown Free Fare Zone boundaries.</p>
+                    </div>
+
+                    <!-- How to Pay -->
+                    <div class="gh-info-card">
+                        <div class="gh-info-header">
+                            <span class="gh-info-icon">💳</span>
+                            <span class="gh-info-card-title">How to Pay</span>
+                        </div>
+                        <ul class="gh-pay-list">
+                            <li><strong><a href="https://transitapp.com/" target="_blank" rel="noopener"
+                                        class="gh-link">Transit App</a>:</strong> Official app for trip planning &amp;
+                                mobile tickets.</li>
+                            <li><strong>FAREPAY Card:</strong> Tap-to-pay.</li>
+                            <li><strong>Cash:</strong> Works on buses. For TRAX, buy ticket at station machine.</li>
+                        </ul>
+                    </div>
+
+                    <!-- University Shuttles -->
+                    <div class="gh-info-card">
+                        <div class="gh-info-header">
+                            <span class="gh-info-icon">🎓</span>
+                            <span class="gh-info-card-title">University Shuttles</span>
+                        </div>
+                        <p class="gh-info-body">"U Buses" are free to ride.</p>
+                        <div class="gh-shuttle-links">
+                            <a href="https://uofubus.com/" target="_blank" rel="noopener" class="gh-shuttle-btn">🗺
+                                uofubus.com <span class="gh-shuttle-sub">Live Tracker</span></a>
+                            <a href="https://transloc.com/app/" target="_blank" rel="noopener" class="gh-shuttle-btn">📱
+                                TransLoc App</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Block 2: From SLC Airport -->
+            <div class="ga-block">
+                <button class="ga-block-toggle" id="ga-toggle-airport" onclick="toggleGaBlock('airport')"
+                    aria-expanded="false" aria-controls="ga-body-airport">
+                    <span class="ga-block-toggle-label">From SLC Airport</span>
+                    <span class="ga-block-chevron">▾</span>
+                </button>
+                <div class="ga-block-body" id="ga-body-airport" hidden>
+                    <div class="gh-steps">
+                        <div class="gh-step">
+                            <span class="gh-step-num">1</span>
+                            <div class="gh-step-body">
+                                <div class="gh-step-label">Rideshare</div>
+                                <div class="gh-step-desc">Take an <a href="https://www.uber.com/" target="_blank"
+                                        rel="noopener" class="gh-link">Uber</a> or <a href="https://www.lyft.com/"
+                                        target="_blank" rel="noopener" class="gh-link">Lyft</a> directly to the hotel.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gh-step">
+                            <span class="gh-step-num">2</span>
+                            <div class="gh-step-body">
+                                <div class="gh-step-label">UTA TRAX <span class="gh-badge">Green Line</span></div>
+                                <div class="gh-step-desc">Take Green Line from <strong>Airport Station</strong> to
+                                    <strong>Gallivan Plaza Station</strong>.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Block 3: Hotel to Campus -->
+            <div class="ga-block">
+                <button class="ga-block-toggle" id="ga-toggle-hotel" onclick="toggleGaBlock('hotel')"
+                    aria-expanded="false" aria-controls="ga-body-hotel">
+                    <span class="ga-block-toggle-label">From Marriott City Center to Campus</span>
+                    <span class="ga-block-chevron">▾</span>
+                </button>
+                <div class="ga-block-body" id="ga-body-hotel" hidden>
+
+                    <!-- Bus Option -->
+                    <div class="gh-info-card">
+                        <div class="gh-info-header">
+                            <span class="gh-info-icon">🚌</span>
+                            <span class="gh-info-card-title">Bus Routes #1 or #2</span>
+                        </div>
+                        <div class="gh-info-body">
+                            Take <strong>Bus #1</strong> or <strong>#2</strong> from State St / 200 S (near hotel).<br>
+                            Get off at <strong>Kennecott Mechanical Engineering Building (KMEB)</strong>.
+                        </div>
+                    </div>
+
+                    <!-- TRAX Option -->
+                    <div class="gh-info-card">
+                        <div class="gh-info-header">
+                            <span class="gh-info-icon">🚆</span>
+                            <span class="gh-info-card-title">TRAX Red Line</span>
+                        </div>
+                        <div class="gh-info-body">
+                            Walk to <strong>Gallivan Plaza Station</strong>.<br>
+                            Take <span class="gh-badge" style="background:var(--uu-red);color:#fff;border:none">Red
+                                Line</span> to <strong>University Hospital</strong>.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ── Full Schedule ── -->
+    <main class="schedule">
+
+        <!-- Thursday -->
+        <section class="day-section" id="day-thu">
+            <div class="day-header">
+                <span class="day-name">Thursday</span>
+                <span class="day-date">February 19</span>
+            </div>
+            <div class="events">
+                <div class="event-card" data-date="2026-02-19">
+                    <div class="event-time">6:00 PM</div>
+                    <div class="event-body">
+                        <div class="event-title">Arrival + Welcome Dinner</div>
+                        <div class="event-meta">
+                            <a class="event-location map-link"
+                                href="https://maps.google.com/?q=220+S+State+St,+Salt+Lake+City,+UT+84111"
+                                target="_blank" rel="noopener">📍 Marriott City Center</a>
+                            <span class="event-host">GradSAC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Friday -->
+        <section class="day-section" id="day-fri">
+            <div class="day-header">
+                <span class="day-name">Friday</span>
+                <span class="day-date">February 20</span>
+            </div>
+            <div class="events">
+
+                <div class="event-card" data-date="2026-02-20">
+                    <div class="event-time">7:30 AM</div>
+                    <div class="event-body">
+                        <div class="event-title">Depart from Hotel</div>
+                        <div class="event-meta">
+                            <a class="event-location map-link"
+                                href="https://maps.google.com/?q=220+S+State+St,+Salt+Lake+City,+UT+84111"
+                                target="_blank" rel="noopener">📍 Marriott City Center</a>
+                            <span class="event-host">GradSAC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card" data-date="2026-02-20">
+                    <div class="event-time">8:00 AM</div>
+                    <div class="event-body">
+                        <div class="event-title">Breakfast</div>
+                        <div class="event-meta">
+                            <a class="event-location map-link"
+                                href="https://maps.google.com/?q=50+S+Central+Campus+Dr,+Salt+Lake+City,+UT+84112"
+                                target="_blank" rel="noopener">📍 MEB 3147 (LCR)</a>
+                            <span class="event-host">KSoC Directors + DGS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card" data-date="2026-02-20">
+                    <div class="event-time">9:00 AM</div>
+                    <div class="event-body">
+                        <div class="event-title">KSoC Facilities Tours + Walk by Price Computing Building</div>
+                        <div class="event-meta">
+                            <a class="event-location map-link"
+                                href="https://maps.google.com/?q=50+S+Central+Campus+Dr,+Salt+Lake+City,+UT+84112"
+                                target="_blank" rel="noopener">📍 MEB 3147 (LCR)</a>
+                            <span class="event-host">GradSAC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card" data-date="2026-02-20">
+                    <div class="event-time">10:00 AM</div>
+                    <div class="event-body">
+                        <div class="event-title">KSoC Research Overview</div>
+                        <div class="event-meta">
+                            <a class="event-location map-link"
+                                href="https://maps.google.com/?q=50+S+Central+Campus+Dr,+Salt+Lake+City,+UT+84112"
+                                target="_blank" rel="noopener">📍 MEB 3147 (LCR)</a>
+                            <span class="event-host">Faculty</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card" data-date="2026-02-20">
+                    <div class="event-time">11:30 AM</div>
+                    <div class="event-body">
+                        <div class="event-title">Faculty Panel</div>
+                        <div class="event-meta">
+                            <a class="event-location map-link"
+                                href="https://maps.google.com/?q=50+S+Central+Campus+Dr,+Salt+Lake+City,+UT+84112"
+                                target="_blank" rel="noopener">📍 MEB 3147 (LCR)</a>
+                            <span class="event-host">Faculty</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card" data-date="2026-02-20">
+                    <div class="event-time">12:00 PM</div>
+                    <div class="event-body">
+                        <div class="event-title">Lunch + Poster Session</div>
+                        <div class="event-meta">
+                            <a class="event-location map-link"
+                                href="https://maps.google.com/?q=72+S+Central+Campus+Dr,+Salt+Lake+City,+UT+84112"
+                                target="_blank" rel="noopener">📍 MEB</a>
+                            <span class="event-host">GradSAC + Faculty</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card" data-date="2026-02-20">
+                    <div class="event-time">1:30 PM</div>
+                    <div class="event-body">
+                        <div class="event-title">Faculty + Lab Meetings</div>
+                        <div class="event-meta">
+                            <span class="event-location">📍 Meetings Signup</span>
+                            <span class="event-host">Faculty</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card" data-date="2026-02-20">
+                    <div class="event-time">3:30 PM</div>
+                    <div class="event-body">
+                        <div class="event-title">Campus Tours</div>
+                        <div class="event-meta">
+                            <a class="event-location map-link"
+                                href="https://maps.google.com/?q=50+S+Central+Campus+Dr,+Salt+Lake+City,+UT+84112"
+                                target="_blank" rel="noopener">📍 MEB 3147 (LCR)</a>
+                            <span class="event-host">GradSAC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card" data-date="2026-02-20">
+                    <div class="event-time">5:00 PM</div>
+                    <div class="event-body">
+                        <div class="event-title">Dinner w/ Faculty</div>
+                        <div class="event-meta">
+                            <a class="event-location map-link"
+                                href="https://maps.google.com/?q=155+S+Central+Campus+Dr,+Salt+Lake+City,+UT+84112"
+                                target="_blank" rel="noopener">📍 Henriksen Room at Alumni House</a>
+                            <span class="event-host">Faculty</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card" data-date="2026-02-20">
+                    <div class="event-time">7:00 PM</div>
+                    <div class="event-body">
+                        <div class="event-title">Return to Hotel</div>
+                        <div class="event-meta">
+                            <a class="event-location map-link"
+                                href="https://maps.google.com/?q=155+S+Central+Campus+Dr,+Salt+Lake+City,+UT+84112"
+                                target="_blank" rel="noopener">📍 Alumni House</a>
+                            <span class="event-host">GradSAC</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Saturday -->
+        <section class="day-section" id="day-sat">
+            <div class="day-header">
+                <span class="day-name">Saturday</span>
+                <span class="day-date">February 21</span>
+            </div>
+            <div class="events">
+
+                <div class="event-card" data-date="2026-02-21">
+                    <div class="event-time">7:00 – 8:30 AM</div>
+                    <div class="event-body">
+                        <div class="event-title">Breakfast w/ GradSAC</div>
+                        <div class="event-note">Convene at hotel; aim to depart for morning activities by 8:30 AM</div>
+                        <div class="event-meta">
+                            <a class="event-location map-link"
+                                href="https://maps.google.com/?q=220+S+State+St,+Salt+Lake+City,+UT+84111"
+                                target="_blank" rel="noopener">📍 Marriott City Center</a>
+                            <span class="event-host">GradSAC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card activity-block" data-date="2026-02-21">
+                    <div class="event-time">9:00 AM – 1:00 PM</div>
+                    <div class="event-body">
+                        <div class="event-title">Morning Activities</div>
+                        <div class="event-note">Join or leave whenever</div>
+                        <div class="event-meta">
+                            <span class="event-host">GradSAC</span>
+                        </div>
+                        <div class="activity-options">
+                            <div class="activity-option">
+                                <span class="activity-icon">🏘️</span>
+                                <div>
+                                    <div class="activity-name">Neighborhood Tour</div>
+                                    <a class="activity-meet map-link"
+                                        href="https://maps.google.com/?q=220+S+State+St,+Salt+Lake+City,+UT+84111"
+                                        target="_blank" rel="noopener">📍 Marriott City Center</a>
+                                </div>
+                            </div>
+                            <div class="activity-option">
+                                <span class="activity-icon">🥾</span>
+                                <div>
+                                    <div class="activity-name">Morning Hike</div>
+                                    <a class="activity-meet map-link"
+                                        href="https://www.alltrails.com/trail/us/utah/the-living-room-lookout-trail"
+                                        target="_blank" rel="noopener">📍 Living Room Trailhead</a>
+                                </div>
+                            </div>
+                            <div class="activity-option personal">
+                                <span class="activity-icon">🧘</span>
+                                <div>
+                                    <div class="activity-name">Personal Break / Explore on Your Own</div>
+                                    <div class="activity-meet">No signup — GradSAC on-call for return coordination</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card" data-date="2026-02-21">
+                    <div class="event-time">12:00 PM</div>
+                    <div class="event-body">
+                        <div class="event-title">Lunch</div>
+                        <div class="event-note">With activity group</div>
+                        <div class="event-meta">
+                            <span class="event-host">GradSAC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card activity-block" data-date="2026-02-21">
+                    <div class="event-time">1:00 – 7:00 PM</div>
+                    <div class="event-body">
+                        <div class="event-title">Afternoon Activities</div>
+                        <div class="event-note">Join or leave whenever</div>
+                        <div class="event-meta">
+                            <span class="event-host">GradSAC</span>
+                        </div>
+                        <div class="activity-options">
+                            <div class="activity-option">
+                                <span class="activity-icon">🧗</span>
+                                <div>
+                                    <div class="activity-name">Indoor Rock-Climbing @ The Front</div>
+                                    <a class="activity-meet map-link"
+                                        href="https://maps.google.com/?q=1470+S+400+W,+Salt+Lake+City,+UT+84115"
+                                        target="_blank" rel="noopener">📍 The Front</a>
+                                </div>
+                            </div>
+                            <div class="activity-option">
+                                <span class="activity-icon">🔍</span>
+                                <div>
+                                    <div class="activity-name">Downtown SLC Mystery Box</div>
+                                    <a class="activity-meet map-link"
+                                        href="https://maps.google.com/?q=220+S+State+St,+Salt+Lake+City,+UT+84111"
+                                        target="_blank" rel="noopener">📍 Marriott City Center</a>
+                                </div>
+                            </div>
+                            <div class="activity-option">
+                                <span class="activity-icon">🦕</span>
+                                <div>
+                                    <div class="activity-name">Utah Natural History Museum Tour</div>
+                                    <a class="activity-meet map-link"
+                                        href="https://maps.google.com/?q=301+Wakara+Way,+Salt+Lake+City,+UT+84108"
+                                        target="_blank" rel="noopener">📍 Natural History Center</a>
+                                </div>
+                            </div>
+                            <div class="activity-option">
+                                <span class="activity-icon">⛷️</span>
+                                <div>
+                                    <div class="activity-name">Bus to Snowbird Ski Resort / Tram Excursion</div>
+                                    <a class="activity-meet map-link"
+                                        href="https://www.google.com/maps/place/Snowbird+Ski+Resort/data=!4m2!3m1!1s0x87527085fd926c3f:0x113477a4514aebb3?sa=X&ved=1t:242&ictx=111"
+                                        target="_blank" rel="noopener">📍 Snowbird Ski Resort</a>
+                                </div>
+                            </div>
+                            <div class="activity-option personal">
+                                <span class="activity-icon">🧘</span>
+                                <div>
+                                    <div class="activity-name">Personal Break / Explore on Your Own</div>
+                                    <div class="activity-meet">No signup — GradSAC on-call for return coordination</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card" data-date="2026-02-21">
+                    <div class="event-time">5:00 PM</div>
+                    <div class="event-body">
+                        <div class="event-title">Dinner</div>
+                        <div class="event-note">With activity group</div>
+                        <div class="event-meta">
+                            <span class="event-host">GradSAC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card activity-block" data-date="2026-02-21">
+                    <div class="event-time">7:00 – 9:00 PM</div>
+                    <div class="event-body">
+                        <div class="event-title">Evening Activities</div>
+                        <div class="event-note">Join or leave whenever</div>
+                        <div class="event-meta">
+                            <span class="event-host">GradSAC</span>
+                        </div>
+                        <div class="activity-options">
+                            <div class="activity-option">
+                                <span class="activity-icon">🎻</span>
+                                <div>
+                                    <div class="activity-name">Utah Symphony</div>
+                                    <a class="activity-meet map-link" href="https://share.google/V6RjgFZeMOEdjArO9"
+                                        target="_blank" rel="noopener">📍 Abravanel Hall</a>
+                                </div>
+                            </div>
+                            <div class="activity-option">
+                                <span class="activity-icon">🔐</span>
+                                <div>
+                                    <div class="activity-name">Escape Room</div>
+                                    <a class="activity-meet map-link"
+                                        href="https://maps.google.com/?q=220+S+State+St,+Salt+Lake+City,+UT+84111"
+                                        target="_blank" rel="noopener">📍 Marriott City Center</a>
+                                </div>
+                            </div>
+                            <div class="activity-option personal">
+                                <span class="activity-icon">🧘</span>
+                                <div>
+                                    <div class="activity-name">Personal Break / Explore on Your Own</div>
+                                    <div class="activity-meet">No signup — GradSAC on-call for return coordination</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+        <img src="UU Logo-HRZ_RED.svg" alt="University of Utah" class="footer-logo" />
+        <p>Kahlert School of Computing · Visit Weekend 2026</p>
+    </footer>
+
+    <script>
+        /* ── Getting Around block toggles ── */
+        function toggleGaBlock(key) {
+            const body = document.getElementById('ga-body-' + key);
+            const btn = document.getElementById('ga-toggle-' + key);
+            const isOpen = !body.hidden;
+            body.hidden = isOpen;
+            btn.setAttribute('aria-expanded', String(!isOpen));
+            btn.classList.toggle('ga-open', !isOpen);
+        }
+
+        /* ── Contact toggles ── */
+        function toggleContact(id) {
+            const detail = document.getElementById(id);
+            const btn = document.getElementById('btn-' + id);
+            const isOpen = detail.classList.contains('open');
+            document.querySelectorAll('.contact-detail').forEach(d => d.classList.remove('open'));
+            document.querySelectorAll('.contact-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-expanded', 'false'); });
+            if (!isOpen) { detail.classList.add('open'); btn.classList.add('active'); btn.setAttribute('aria-expanded', 'true'); }
+        }
+        document.addEventListener('click', e => {
+            if (!e.target.closest('.contact-group')) {
+                document.querySelectorAll('.contact-detail').forEach(d => d.classList.remove('open'));
+                document.querySelectorAll('.contact-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-expanded', 'false'); });
+            }
+        });
+
+        /* ── Event data ── */
+        const LOCATIONS = {
+            marriott: { label: 'Marriott City Center', url: 'https://maps.google.com/?q=220+S+State+St,+Salt+Lake+City,+UT+84111' },
+            meb: { label: 'MEB 3147 (LCR)', url: 'https://maps.google.com/?q=50+S+Central+Campus+Dr,+Salt+Lake+City,+UT+84112' },
+            alumni: { label: 'Alumni House', url: 'https://maps.google.com/?q=155+S+Central+Campus+Dr,+Salt+Lake+City,+UT+84112' },
+            thefront: { label: 'The Front', url: 'https://maps.google.com/?q=1470+S+400+W,+Salt+Lake+City,+UT+84115' },
+            various: { label: 'Various', url: null },
+        };
+
+        const ALL_EVENTS = [
+            { date: '2026-02-19', startH: 18, startM: 0, endH: 23, endM: 59, title: 'Arrival + Welcome Dinner', loc: LOCATIONS.marriott },
+            { date: '2026-02-20', startH: 7, startM: 30, endH: 8, endM: 0, title: 'Depart from Hotel', loc: LOCATIONS.marriott },
+            { date: '2026-02-20', startH: 8, startM: 0, endH: 9, endM: 0, title: 'Breakfast', loc: LOCATIONS.meb },
+            { date: '2026-02-20', startH: 9, startM: 0, endH: 10, endM: 0, title: 'KSoC Facilities Tours', loc: LOCATIONS.meb },
+            { date: '2026-02-20', startH: 10, startM: 0, endH: 11, endM: 30, title: 'KSoC Research Overview', loc: LOCATIONS.meb },
+            { date: '2026-02-20', startH: 11, startM: 30, endH: 12, endM: 0, title: 'Faculty Panel', loc: LOCATIONS.meb },
+            { date: '2026-02-20', startH: 12, startM: 0, endH: 13, endM: 30, title: 'Lunch + Poster Session', loc: LOCATIONS.meb },
+            { date: '2026-02-20', startH: 13, startM: 30, endH: 15, endM: 30, title: 'Faculty + Lab Meetings', loc: { label: 'Meetings Signup', url: null } },
+            { date: '2026-02-20', startH: 15, startM: 30, endH: 17, endM: 0, title: 'Campus Tours', loc: LOCATIONS.meb },
+            { date: '2026-02-20', startH: 17, startM: 0, endH: 19, endM: 0, title: 'Dinner w/ Faculty', loc: LOCATIONS.alumni },
+            { date: '2026-02-20', startH: 19, startM: 0, endH: 23, endM: 59, title: 'Return to Hotel', loc: LOCATIONS.alumni },
+            { date: '2026-02-21', startH: 7, startM: 0, endH: 8, endM: 30, title: 'Breakfast w/ GradSAC', loc: LOCATIONS.marriott },
+            { date: '2026-02-21', startH: 9, startM: 0, endH: 13, endM: 0, title: 'Morning Activities', loc: LOCATIONS.various },
+            { date: '2026-02-21', startH: 12, startM: 0, endH: 13, endM: 0, title: 'Lunch', loc: { label: 'With Activity Group', url: null } },
+            { date: '2026-02-21', startH: 13, startM: 0, endH: 19, endM: 0, title: 'Afternoon Activities', loc: LOCATIONS.various },
+            { date: '2026-02-21', startH: 17, startM: 0, endH: 19, endM: 0, title: 'Dinner', loc: { label: 'With Activity Group', url: null } },
+            { date: '2026-02-21', startH: 19, startM: 0, endH: 21, endM: 0, title: 'Evening Activities', loc: LOCATIONS.various },
+        ];
+
+        const DAY_NAMES = { '2026-02-19': 'Thursday, Feb 19', '2026-02-20': 'Friday, Feb 20', '2026-02-21': 'Saturday, Feb 21' };
+
+        let selectedDay = null; // null = auto mode
+
+        function fmt12(h, m) {
+            const ampm = h >= 12 ? 'PM' : 'AM';
+            return `${h % 12 || 12}:${String(m).padStart(2, '0')} ${ampm}`;
+        }
+        function toMins(h, m) { return h * 60 + m; }
+
+        function locLink(loc) {
+            if (loc.url) return `<a class="cal-ev-loc map-link" href="${loc.url}" target="_blank" rel="noopener">📍 ${loc.label}</a>`;
+            return `<span class="cal-ev-loc">📍 ${loc.label}</span>`;
+        }
+
+        function renderEventItem(e, todayStr, nowMins, isNow, isPast) {
+            const div = document.createElement('div');
+            div.className = 'cal-event-item' + (isNow ? ' cal-event-now' : '') + (isPast ? ' cal-event-past' : '');
+            const dayLabel = e.date !== todayStr ? ` · ${DAY_NAMES[e.date] || e.date}` : '';
+            div.innerHTML = `
+        <div class="cal-ev-title">${e.title}${isNow ? '<span class="now-pill">Now</span>' : ''}${isPast ? '<span class="past-pill">Done</span>' : ''}</div>
+        <div class="cal-ev-meta">${fmt12(e.startH, e.startM)}${dayLabel}</div>
+        <div>${locLink(e.loc)}</div>`;
+            return div;
+        }
+
+        function updateWidget() {
+            const now = new Date();
+            const todayStr = now.toISOString().slice(0, 10);
+            const nowMins = now.getHours() * 60 + now.getMinutes();
+
+            // Mark calendar days
+            ['19', '20', '21'].forEach(d => {
+                const el = document.getElementById('calDay' + d);
+                if (!el) return;
+                const ds = '2026-02-' + d;
+                el.classList.remove('today', 'event-past', 'event-future', 'cal-selected');
+                if (ds === todayStr) el.classList.add('today');
+                else if (ds < todayStr) el.classList.add('event-past');
+                else el.classList.add('event-future');
+                if (selectedDay === ds) el.classList.add('cal-selected');
+            });
+
+            // Mark today on non-event days
+            document.querySelectorAll('.cal-day:not(.event-day)').forEach(el => {
+                el.classList.remove('today-plain');
+                const d = parseInt(el.textContent);
+                if (!isNaN(d) && `2026-02-${String(d).padStart(2, '0')}` === todayStr) el.classList.add('today-plain');
+            });
+
+            const label = document.getElementById('calRightLabel');
+            const list = document.getElementById('calEventsList');
+            const clearBtn = document.getElementById('calClearBtn');
+            list.innerHTML = '';
+
+            // ── Day-filter mode ──
+            if (selectedDay) {
+                clearBtn.style.display = 'flex';
+                label.textContent = DAY_NAMES[selectedDay] || selectedDay;
+                const dayEvents = ALL_EVENTS.filter(e => e.date === selectedDay);
+
+                // Categorise events for smart ordering
+                const nowEvts = dayEvents.filter(e => selectedDay === todayStr && nowMins >= toMins(e.startH, e.startM) && nowMins < toMins(e.endH, e.endM));
+                const nextEvts = dayEvents.filter(e => selectedDay > todayStr || (selectedDay === todayStr && toMins(e.startH, e.startM) > nowMins));
+                const pastEvts = dayEvents.filter(e => selectedDay < todayStr || (selectedDay === todayStr && toMins(e.endH, e.endM) <= nowMins));
+
+                // For a future day show first 3; for today show active + next 3; for past show last 2
+                const PEEK = 3;
+                let visible, hidden;
+                if (selectedDay > todayStr) {
+                    // Future day — show first PEEK upcoming
+                    visible = nextEvts.slice(0, PEEK);
+                    hidden = nextEvts.slice(PEEK);
+                } else if (selectedDay === todayStr) {
+                    // Today — show active + next PEEK
+                    const combined = [...nowEvts, ...nextEvts].slice(0, PEEK + nowEvts.length);
+                    visible = combined;
+                    hidden = [...nextEvts.slice(combined.length - nowEvts.length), ...pastEvts.slice(-1)];
+                } else {
+                    // Past day — show last 2 events
+                    visible = pastEvts.slice(-2);
+                    hidden = pastEvts.slice(0, -2);
+                }
+
+                visible.forEach(e => {
+                    const isNow = nowEvts.includes(e);
+                    const isPast = pastEvts.includes(e);
+                    list.appendChild(renderEventItem(e, todayStr, nowMins, isNow, isPast));
+                });
+
+                // "Show all" toggle
+                if (hidden.length > 0) {
+                    const toggle = document.createElement('button');
+                    toggle.className = 'cal-show-all-btn';
+                    toggle.setAttribute('aria-expanded', 'false');
+                    const remaining = dayEvents.length - visible.length;
+                    toggle.textContent = `Show all ${dayEvents.length} events ↓`;
+                    toggle.onclick = () => {
+                        toggle.remove();
+                        dayEvents.forEach(e => {
+                            const isNow = nowEvts.includes(e);
+                            const isPast = pastEvts.includes(e);
+                            if (!visible.includes(e)) list.appendChild(renderEventItem(e, todayStr, nowMins, isNow, isPast));
+                        });
+                    };
+                    list.appendChild(toggle);
+                }
+
+                // If nothing to show at all (shouldn't happen)
+                if (dayEvents.length === 0) {
+                    const div = document.createElement('div'); div.className = 'cal-event-item';
+                    div.innerHTML = '<div class="cal-ev-title">No events this day</div>';
+                    list.appendChild(div);
+                }
+                return;
+            }
+
+            // ── Auto mode ──
+            clearBtn.style.display = 'none';
+            const current = ALL_EVENTS.filter(e => e.date === todayStr && nowMins >= toMins(e.startH, e.startM) && nowMins < toMins(e.endH, e.endM));
+            const upcoming = ALL_EVENTS.filter(e => e.date > todayStr || (e.date === todayStr && toMins(e.startH, e.startM) > nowMins)).slice(0, 4);
+
+            if (current.length > 0) {
+                label.textContent = '🔴 Happening Now';
+                current.forEach(e => list.appendChild(renderEventItem(e, todayStr, nowMins, true)));
+                if (upcoming.length > 0) {
+                    const sep = document.createElement('div'); sep.className = 'cal-sep'; sep.textContent = 'Up Next';
+                    list.appendChild(sep);
+                    upcoming.slice(0, 2).forEach(e => list.appendChild(renderEventItem(e, todayStr, nowMins, false)));
+                }
+            } else if (upcoming.length > 0) {
+                label.textContent = todayStr < '2026-02-19' ? '📅 Weekend Starts Soon' : '⏭ Up Next';
+                upcoming.forEach(e => list.appendChild(renderEventItem(e, todayStr, nowMins, false)));
+            } else {
+                label.textContent = '✅ Weekend Complete';
+                const div = document.createElement('div'); div.className = 'cal-event-item';
+                div.innerHTML = '<div class="cal-ev-title">Thanks for visiting!</div><div class="cal-ev-meta">See you at the U 🎓</div>';
+                list.appendChild(div);
+            }
+        } // end updateWidget
+
+        function selectDay(dateStr) {
+            selectedDay = (selectedDay === dateStr) ? null : dateStr;
+            updateWidget();
+        }
+
+        function clearDayFilter() {
+            selectedDay = null;
+            updateWidget();
+        }
+
+        // Keyboard support for calendar days
+        document.querySelectorAll('.event-day').forEach(el => {
+            el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); } });
+        });
+
+        updateWidget();
+        setInterval(updateWidget, 60000);
+    </script>
+
+</body>
+
+</html>
