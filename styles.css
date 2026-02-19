@@ -770,6 +770,25 @@ a.activity-meet:hover {
     border-bottom: 2px solid var(--uu-red);
 }
 
+.welcome-body {
+    font-size: .95rem;
+    color: var(--text-primary);
+    line-height: 1.7;
+}
+
+.welcome-body>p {
+    margin-bottom: 14px;
+}
+
+.welcome-body .gh-info-card {
+    background: var(--warm-card);
+    box-shadow: var(--shadow-sm);
+}
+
+.welcome-body .gh-info-card+.gh-info-card {
+    margin-top: 12px;
+}
+
 .ga-blocks {
     display: flex;
     flex-direction: column;
@@ -815,7 +834,7 @@ a.activity-meet:hover {
 }
 
 .ga-block-chevron {
-    font-size: .7rem;
+    font-size: 1.5rem;
     color: var(--text-muted);
     transition: transform var(--transition);
     flex-shrink: 0;

@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Visit Weekend — University of Utah</title>
+    <title>Graduate Visit Weekend — University of Utah</title>
     <link rel="icon" href="UU Logo-CTR_RGB.svg" type="image/svg+xml">
     <meta name="description"
-        content="Official schedule for the University of Utah KSoC Visit Weekend, February 19–21, 2026." />
+        content="Official schedule for the University of Utah KSoC Graduate Visit Weekend, February 19–21, 2026." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -41,10 +41,43 @@
     <header class="site-header">
         <img src="UU Logo-HRZ_RED.svg" alt="University of Utah" class="uu-logo" />
         <div class="header-text">
-            <h1>Visit Weekend</h1>
+            <h1>Graduate Visit Weekend</h1>
             <p class="header-sub">Kahlert School of Computing · Feb 19–21, 2026</p>
         </div>
     </header>
+
+    <!-- ── Welcome ── -->
+    <div class="ga-section">
+        <div class="ga-title-row">
+            <span class="ga-section-title">👋 Welcome</span>
+        </div>
+        <div class="welcome-body">
+            <p>We're excited to have you join us for the Kahlert School of Computing Graduate Visit Weekend! This page has everything you need — the full schedule, transit directions, and campus maps. If you have any questions, don't hesitate to reach out using the contact buttons above.</p>
+
+            <div class="gh-info-card">
+                <div class="gh-info-header">
+                    <span class="gh-info-icon">🧾</span>
+                    <span class="gh-info-card-title">Reimbursements</span>
+                </div>
+                <div class="gh-info-body">
+                    <strong>Please save all receipts</strong> from your trip (flights, ground transportation, meals, etc.). To request reimbursement, email your receipts to <a href="mailto:frontdesk@cs.utah.edu" class="gh-link">frontdesk@cs.utah.edu</a>.
+                </div>
+            </div>
+
+            <div class="gh-info-card">
+                <div class="gh-info-header">
+                    <span class="gh-info-icon">🧑‍🏫</span>
+                    <span class="gh-info-card-title">Faculty + Lab Meetings (Friday 1:30–3:30 PM)</span>
+                </div>
+                <div class="gh-info-body">
+                    On Friday afternoon you'll have the chance to meet with faculty and visit research labs. Some meetings accept <strong>walk-ins</strong>, while others require you to <strong>email ahead</strong> to arrange a time. Check the spreadsheet below to see who's available and how to sign up.
+                    <div class="gh-shuttle-links" style="margin-top: 10px;">
+                        <a href="https://docs.google.com/spreadsheets/d/1qts2UAWl5vglenHFcQRy4AZZjWcZGpYZNASt9sGiTAE/edit?usp=sharing" target="_blank" rel="noopener" class="gh-shuttle-btn">📋 Meeting Availability Sheet</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ── Live Calendar Widget ── -->
     <div class="widget-wrap">
@@ -98,18 +131,30 @@
         </div>
         <div class="ga-blocks">
 
-            <!-- Block 1: Public Transportation -->
+            <!-- Block 1a: UTA Public Transit (Buses & TRAX) -->
             <div class="ga-block">
                 <button class="ga-block-toggle" id="ga-toggle-transit" onclick="toggleGaBlock('transit')"
                     aria-expanded="false" aria-controls="ga-body-transit">
-                    <span class="ga-block-toggle-label">Public Transportation <span
-                            class="gh-block-sub">(TRAX)</span></span>
+                    <span class="ga-block-toggle-label">UTA Public Transit <span
+                            class="gh-block-sub">(Buses &amp; TRAX)</span></span>
                     <span class="ga-block-chevron">▾</span>
                 </button>
                 <div class="ga-block-body" id="ga-body-transit" hidden>
 
-                    <!-- Core Fares -->
-                    <div class="gh-sub-title">Core Fares</div>
+                    <p class="gh-info-body">Salt Lake City's public transit is run by <a href="https://www.rideuta.com/" target="_blank" rel="noopener" class="gh-link">UTA</a> and includes <strong>buses</strong> and the <strong>TRAX</strong> light-rail system.</p>
+
+                    <!-- Free Fare Zone -->
+                    <div class="gh-info-card">
+                        <div class="gh-info-header">
+                            <span class="gh-info-icon">🆓</span>
+                            <span class="gh-info-card-title">Free Fare Zone</span>
+                        </div>
+                        <p class="gh-info-body">You can ride TRAX or buses for <strong>free</strong> if you
+                            enter and exit within the downtown Free Fare Zone boundaries.</p>
+                    </div>
+
+                    <!-- Fares (outside Free Fare Zone) -->
+                    <div class="gh-sub-title">Fares (outside Free Fare Zone)</div>
                     <div class="gh-fare-table">
                         <div class="gh-fare-row">
                             <span class="gh-fare-label">One-way</span>
@@ -119,20 +164,6 @@
                             <span class="gh-fare-label">Day Pass</span>
                             <span class="gh-fare-price">$5.00</span>
                         </div>
-                    </div>
-                    <div class="gh-uta-link-wrap">
-                        Visit <a href="https://www.rideuta.com/" target="_blank" rel="noopener"
-                            class="gh-link">rideuta.com</a> for maps &amp; details.
-                    </div>
-
-                    <!-- Free Fare Zone -->
-                    <div class="gh-info-card">
-                        <div class="gh-info-header">
-                            <span class="gh-info-icon">🚌</span>
-                            <span class="gh-info-card-title">Free Fare Zone</span>
-                        </div>
-                        <p class="gh-info-body">You can ride TRAX or buses for <strong>free</strong> if you
-                            enter and exit within the downtown Free Fare Zone boundaries.</p>
                     </div>
 
                     <!-- How to Pay -->
@@ -145,18 +176,30 @@
                             <li><strong><a href="https://transitapp.com/" target="_blank" rel="noopener"
                                         class="gh-link">Transit App</a>:</strong> Official app for trip planning &amp;
                                 mobile tickets.</li>
-                            <li><strong>FAREPAY Card:</strong> Tap-to-pay.</li>
+                            <li><strong><a href="https://www.rideuta.com/Fares-And-Passes/Individual-Fares/FAREPAY-Card" target="_blank" rel="noopener" class="gh-link">FAREPAY Card</a>:</strong> Reloadable tap-to-pay card with automatic fare capping. $3 one-time fee. Buy online at <a href="https://farepay.rideuta.com/" target="_blank" rel="noopener" class="gh-link">farepay.rideuta.com</a>, at UTA Customer Service centers, or at participating retailers. Best for frequent riders — for a short visit, the Transit App or cash may be easier.</li>
                             <li><strong>Cash:</strong> Works on buses. For TRAX, buy ticket at station machine.</li>
                         </ul>
                     </div>
 
-                    <!-- University Shuttles -->
+                </div>
+            </div>
+
+            <!-- Block 1b: University Shuttles -->
+            <div class="ga-block">
+                <button class="ga-block-toggle" id="ga-toggle-shuttle" onclick="toggleGaBlock('shuttle')"
+                    aria-expanded="false" aria-controls="ga-body-shuttle">
+                    <span class="ga-block-toggle-label">University Shuttles <span
+                            class="gh-block-sub">(Free)</span></span>
+                    <span class="ga-block-chevron">▾</span>
+                </button>
+                <div class="ga-block-body" id="ga-body-shuttle" hidden>
+
                     <div class="gh-info-card">
                         <div class="gh-info-header">
                             <span class="gh-info-icon">🎓</span>
-                            <span class="gh-info-card-title">University Shuttles</span>
+                            <span class="gh-info-card-title">U Buses</span>
                         </div>
-                        <p class="gh-info-body">"U Buses" are free to ride.</p>
+                        <p class="gh-info-body">The University of Utah runs its own free shuttle buses around campus — separate from UTA.</p>
                         <div class="gh-shuttle-links">
                             <a href="https://uofubus.com/" target="_blank" rel="noopener" class="gh-shuttle-btn">🗺
                                 uofubus.com <span class="gh-shuttle-sub">Live Tracker</span></a>
@@ -172,7 +215,7 @@
             <div class="ga-block">
                 <button class="ga-block-toggle" id="ga-toggle-airport" onclick="toggleGaBlock('airport')"
                     aria-expanded="false" aria-controls="ga-body-airport">
-                    <span class="ga-block-toggle-label">From SLC Airport</span>
+                    <span class="ga-block-toggle-label">From Airport to Hotel</span>
                     <span class="ga-block-chevron">▾</span>
                 </button>
                 <div class="ga-block-body" id="ga-body-airport" hidden>
@@ -183,16 +226,18 @@
                                 <div class="gh-step-label">Rideshare</div>
                                 <div class="gh-step-desc">Take an <a href="https://www.uber.com/" target="_blank"
                                         rel="noopener" class="gh-link">Uber</a> or <a href="https://www.lyft.com/"
-                                        target="_blank" rel="noopener" class="gh-link">Lyft</a> directly to the hotel.
+                                        target="_blank" rel="noopener" class="gh-link">Lyft</a> directly to the hotel (Marriott City Center).<br>
+                                    After collecting your luggage, follow signs to <strong>Ground Transportation</strong> on the arrivals level — rideshare pickup is curbside on the ground level of the terminal.
                                 </div>
                             </div>
                         </div>
                         <div class="gh-step">
                             <span class="gh-step-num">2</span>
                             <div class="gh-step-body">
-                                <div class="gh-step-label">UTA TRAX <span class="gh-badge">Green Line</span></div>
-                                <div class="gh-step-desc">Take Green Line from <strong>Airport Station</strong> to
-                                    <strong>Gallivan Plaza Station</strong>.
+                                <div class="gh-step-label">TRAX</div>
+                                <div class="gh-step-desc">Take the TRAX <span class="gh-badge" style="background:#093;color:#fff;border:none">Green Line</span> from <strong>Airport Station</strong> to
+                                    <strong>Gallivan Plaza Station</strong>.<br>
+                                    From the station, walk one block east on 200 S — the <strong>Marriott City Center</strong> is at 220 S State St.
                                 </div>
                             </div>
                         </div>
@@ -204,33 +249,92 @@
             <div class="ga-block">
                 <button class="ga-block-toggle" id="ga-toggle-hotel" onclick="toggleGaBlock('hotel')"
                     aria-expanded="false" aria-controls="ga-body-hotel">
-                    <span class="ga-block-toggle-label">From Marriott City Center to Campus</span>
+                    <span class="ga-block-toggle-label">From Hotel to Campus</span>
                     <span class="ga-block-chevron">▾</span>
                 </button>
                 <div class="ga-block-body" id="ga-body-hotel" hidden>
+                    <div class="gh-steps">
+                        <div class="gh-step">
+                            <span class="gh-step-num">1</span>
+                            <div class="gh-step-body">
+                                <div class="gh-step-label">Bus Routes #1 or #2</div>
+                                <div class="gh-step-desc">Take <strong>Bus #1</strong> or <strong>#2</strong> from State St / 200 S (near hotel).<br>
+                                    Get off at <strong>Kennecott Mechanical Engineering Building (KMEB)</strong>.<br>
+                                    From the bus stop, walk north — <strong>MEB</strong> (Merrill Engineering Building) is just up the hill past <strong>WEB</strong>.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gh-step">
+                            <span class="gh-step-num">2</span>
+                            <div class="gh-step-body">
+                                <div class="gh-step-label">TRAX</div>
+                                <div class="gh-step-desc">Walk to <strong>Gallivan Plaza Station</strong>.<br>
+                                    Take the TRAX <span class="gh-badge" style="background:var(--uu-red);color:#fff;border:none">Red Line</span> to <strong>Fort Douglas Station</strong>.<br>
+                                    From the station, walk west down the hill and head north along Central Campus Drive — <strong>MEB</strong> will be on your left.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                    <!-- Bus Option -->
+            <!-- Block 4: UofU Campus and Building Maps -->
+            <div class="ga-block">
+                <button class="ga-block-toggle" id="ga-toggle-maps" onclick="toggleGaBlock('maps')"
+                    aria-expanded="false" aria-controls="ga-body-maps">
+                    <span class="ga-block-toggle-label">UofU Campus and Building Maps</span>
+                    <span class="ga-block-chevron">▾</span>
+                </button>
+                <div class="ga-block-body" id="ga-body-maps" hidden>
+
+                    <!-- Campus Map -->
                     <div class="gh-info-card">
                         <div class="gh-info-header">
-                            <span class="gh-info-icon">🚌</span>
-                            <span class="gh-info-card-title">Bus Routes #1 or #2</span>
+                            <span class="gh-info-icon">🗺️</span>
+                            <span class="gh-info-card-title">Campus Map</span>
                         </div>
-                        <div class="gh-info-body">
-                            Take <strong>Bus #1</strong> or <strong>#2</strong> from State St / 200 S (near hotel).<br>
-                            Get off at <strong>Kennecott Mechanical Engineering Building (KMEB)</strong>.
+                        <p class="gh-info-body">Interactive map of the University of Utah campus with building locations, parking, and transit stops.</p>
+                        <div class="gh-shuttle-links">
+                            <a href="https://map.utah.edu/" target="_blank" rel="noopener" class="gh-shuttle-btn">🗺️ Interactive Campus Map</a>
+                            <a href="https://www.utah.edu/printable-maps/assets/main-campus-map.pdf" target="_blank" rel="noopener" class="gh-shuttle-btn">📄 Printable Map (PDF)</a>
                         </div>
                     </div>
 
-                    <!-- TRAX Option -->
+                    <!-- MEB (Merrill Engineering Building) -->
                     <div class="gh-info-card">
                         <div class="gh-info-header">
-                            <span class="gh-info-icon">🚆</span>
-                            <span class="gh-info-card-title">TRAX Red Line</span>
+                            <span class="gh-info-icon">🏛️</span>
+                            <span class="gh-info-card-title">Merrill Engineering Building (MEB)</span>
                         </div>
-                        <div class="gh-info-body">
-                            Walk to <strong>Gallivan Plaza Station</strong>.<br>
-                            Take <span class="gh-badge" style="background:var(--uu-red);color:#fff;border:none">Red
-                                Line</span> to <strong>University Hospital</strong>.
+                        <p class="gh-info-body">Home of the Kahlert School of Computing. Most Friday events take place here in <strong>MEB 3147 (LCR)</strong>.</p>
+                        <div class="gh-shuttle-links">
+                            <a href="https://maps.google.com/?q=50+S+Central+Campus+Dr,+Salt+Lake+City,+UT+84112" target="_blank" rel="noopener" class="gh-shuttle-btn">📍 Google Maps</a>
+                            <a href="https://www.ece.utah.edu/wp-content/uploads/2024/01/CoE-Bldg-floorplans-MEB-highlighted.pdf" target="_blank" rel="noopener" class="gh-shuttle-btn">🏛️ Floor Plans (PDF)</a>
+                        </div>
+                    </div>
+
+                    <!-- WEB (Warnock Engineering Building) -->
+                    <div class="gh-info-card">
+                        <div class="gh-info-header">
+                            <span class="gh-info-icon">🏛️</span>
+                            <span class="gh-info-card-title">Warnock Engineering Building (WEB)</span>
+                        </div>
+                        <p class="gh-info-body">Additional Kahlert School of Computing facilities and lab spaces.</p>
+                        <div class="gh-shuttle-links">
+                            <a href="https://maps.google.com/?q=72+S+Central+Campus+Dr,+Salt+Lake+City,+UT+84112" target="_blank" rel="noopener" class="gh-shuttle-btn">📍 Google Maps</a>
+                            <a href="https://www.ece.utah.edu/wp-content/uploads/2024/01/CoE-Bldg-floorplans_062-WEB.pdf" target="_blank" rel="noopener" class="gh-shuttle-btn">🏛️ Floor Plans (PDF)</a>
+                        </div>
+                    </div>
+
+                    <!-- Alumni House -->
+                    <div class="gh-info-card">
+                        <div class="gh-info-header">
+                            <span class="gh-info-icon">🏠</span>
+                            <span class="gh-info-card-title">Alumni House</span>
+                        </div>
+                        <p class="gh-info-body">Location for the Friday evening dinner with faculty.</p>
+                        <div class="gh-shuttle-links">
+                            <a href="https://maps.google.com/?q=155+S+Central+Campus+Dr,+Salt+Lake+City,+UT+84112" target="_blank" rel="noopener" class="gh-shuttle-btn">📍 Google Maps</a>
                         </div>
                     </div>
 
@@ -258,7 +362,7 @@
                             <a class="event-location map-link"
                                 href="https://maps.google.com/?q=220+S+State+St,+Salt+Lake+City,+UT+84111"
                                 target="_blank" rel="noopener">📍 Marriott City Center</a>
-                            <span class="event-host">GradSAC</span>
+
                         </div>
                     </div>
                 </div>
@@ -281,7 +385,7 @@
                             <a class="event-location map-link"
                                 href="https://maps.google.com/?q=220+S+State+St,+Salt+Lake+City,+UT+84111"
                                 target="_blank" rel="noopener">📍 Marriott City Center</a>
-                            <span class="event-host">GradSAC</span>
+
                         </div>
                     </div>
                 </div>
@@ -294,7 +398,7 @@
                             <a class="event-location map-link"
                                 href="https://maps.google.com/?q=50+S+Central+Campus+Dr,+Salt+Lake+City,+UT+84112"
                                 target="_blank" rel="noopener">📍 MEB 3147 (LCR)</a>
-                            <span class="event-host">KSoC Directors + DGS</span>
+
                         </div>
                     </div>
                 </div>
@@ -302,12 +406,12 @@
                 <div class="event-card" data-date="2026-02-20">
                     <div class="event-time">9:00 AM</div>
                     <div class="event-body">
-                        <div class="event-title">KSoC Facilities Tours + Walk by Price Computing Building</div>
+                        <div class="event-title">KSoC Facilities Tours</div>
                         <div class="event-meta">
                             <a class="event-location map-link"
                                 href="https://maps.google.com/?q=50+S+Central+Campus+Dr,+Salt+Lake+City,+UT+84112"
                                 target="_blank" rel="noopener">📍 MEB 3147 (LCR)</a>
-                            <span class="event-host">GradSAC</span>
+
                         </div>
                     </div>
                 </div>
@@ -320,7 +424,7 @@
                             <a class="event-location map-link"
                                 href="https://maps.google.com/?q=50+S+Central+Campus+Dr,+Salt+Lake+City,+UT+84112"
                                 target="_blank" rel="noopener">📍 MEB 3147 (LCR)</a>
-                            <span class="event-host">Faculty</span>
+
                         </div>
                     </div>
                 </div>
@@ -333,7 +437,7 @@
                             <a class="event-location map-link"
                                 href="https://maps.google.com/?q=50+S+Central+Campus+Dr,+Salt+Lake+City,+UT+84112"
                                 target="_blank" rel="noopener">📍 MEB 3147 (LCR)</a>
-                            <span class="event-host">Faculty</span>
+
                         </div>
                     </div>
                 </div>
@@ -345,8 +449,8 @@
                         <div class="event-meta">
                             <a class="event-location map-link"
                                 href="https://maps.google.com/?q=72+S+Central+Campus+Dr,+Salt+Lake+City,+UT+84112"
-                                target="_blank" rel="noopener">📍 MEB</a>
-                            <span class="event-host">GradSAC + Faculty</span>
+                                target="_blank" rel="noopener">📍 MEB 3rd Floor Hallway</a>
+
                         </div>
                     </div>
                 </div>
@@ -356,8 +460,10 @@
                     <div class="event-body">
                         <div class="event-title">Faculty + Lab Meetings</div>
                         <div class="event-meta">
-                            <span class="event-location">📍 Meetings Signup</span>
-                            <span class="event-host">Faculty</span>
+                            <a class="event-location map-link"
+                                href="https://docs.google.com/spreadsheets/d/1qts2UAWl5vglenHFcQRy4AZZjWcZGpYZNASt9sGiTAE/edit?usp=sharing"
+                                target="_blank" rel="noopener">📋 Meeting Availability</a>
+
                         </div>
                     </div>
                 </div>
@@ -370,7 +476,7 @@
                             <a class="event-location map-link"
                                 href="https://maps.google.com/?q=50+S+Central+Campus+Dr,+Salt+Lake+City,+UT+84112"
                                 target="_blank" rel="noopener">📍 MEB 3147 (LCR)</a>
-                            <span class="event-host">GradSAC</span>
+
                         </div>
                     </div>
                 </div>
@@ -383,7 +489,7 @@
                             <a class="event-location map-link"
                                 href="https://maps.google.com/?q=155+S+Central+Campus+Dr,+Salt+Lake+City,+UT+84112"
                                 target="_blank" rel="noopener">📍 Henriksen Room at Alumni House</a>
-                            <span class="event-host">Faculty</span>
+
                         </div>
                     </div>
                 </div>
@@ -394,9 +500,9 @@
                         <div class="event-title">Return to Hotel</div>
                         <div class="event-meta">
                             <a class="event-location map-link"
-                                href="https://maps.google.com/?q=155+S+Central+Campus+Dr,+Salt+Lake+City,+UT+84112"
-                                target="_blank" rel="noopener">📍 Alumni House</a>
-                            <span class="event-host">GradSAC</span>
+                                href="https://maps.google.com/?q=220+S+State+St,+Salt+Lake+City,+UT+84111"
+                                target="_blank" rel="noopener">📍 Marriott City Center</a>
+
                         </div>
                     </div>
                 </div>
@@ -415,13 +521,13 @@
                 <div class="event-card" data-date="2026-02-21">
                     <div class="event-time">7:00 – 8:30 AM</div>
                     <div class="event-body">
-                        <div class="event-title">Breakfast w/ GradSAC</div>
+                        <div class="event-title">Breakfast</div>
                         <div class="event-note">Convene at hotel; aim to depart for morning activities by 8:30 AM</div>
                         <div class="event-meta">
                             <a class="event-location map-link"
                                 href="https://maps.google.com/?q=220+S+State+St,+Salt+Lake+City,+UT+84111"
                                 target="_blank" rel="noopener">📍 Marriott City Center</a>
-                            <span class="event-host">GradSAC</span>
+
                         </div>
                     </div>
                 </div>
@@ -432,7 +538,7 @@
                         <div class="event-title">Morning Activities</div>
                         <div class="event-note">Join or leave whenever</div>
                         <div class="event-meta">
-                            <span class="event-host">GradSAC</span>
+
                         </div>
                         <div class="activity-options">
                             <div class="activity-option">
@@ -457,7 +563,7 @@
                                 <span class="activity-icon">🧘</span>
                                 <div>
                                     <div class="activity-name">Personal Break / Explore on Your Own</div>
-                                    <div class="activity-meet">No signup — GradSAC on-call for return coordination</div>
+                                    <div class="activity-meet">Feel free to explore Salt Lake City at your own pace</div>
                                 </div>
                             </div>
                         </div>
@@ -470,7 +576,7 @@
                         <div class="event-title">Lunch</div>
                         <div class="event-note">With activity group</div>
                         <div class="event-meta">
-                            <span class="event-host">GradSAC</span>
+
                         </div>
                     </div>
                 </div>
@@ -481,7 +587,7 @@
                         <div class="event-title">Afternoon Activities</div>
                         <div class="event-note">Join or leave whenever</div>
                         <div class="event-meta">
-                            <span class="event-host">GradSAC</span>
+
                         </div>
                         <div class="activity-options">
                             <div class="activity-option">
@@ -508,7 +614,7 @@
                                     <div class="activity-name">Utah Natural History Museum Tour</div>
                                     <a class="activity-meet map-link"
                                         href="https://maps.google.com/?q=301+Wakara+Way,+Salt+Lake+City,+UT+84108"
-                                        target="_blank" rel="noopener">📍 Natural History Center</a>
+                                        target="_blank" rel="noopener">📍 Natural History Museum of Utah</a>
                                 </div>
                             </div>
                             <div class="activity-option">
@@ -524,7 +630,7 @@
                                 <span class="activity-icon">🧘</span>
                                 <div>
                                     <div class="activity-name">Personal Break / Explore on Your Own</div>
-                                    <div class="activity-meet">No signup — GradSAC on-call for return coordination</div>
+                                    <div class="activity-meet">Feel free to explore Salt Lake City at your own pace</div>
                                 </div>
                             </div>
                         </div>
@@ -537,7 +643,7 @@
                         <div class="event-title">Dinner</div>
                         <div class="event-note">With activity group</div>
                         <div class="event-meta">
-                            <span class="event-host">GradSAC</span>
+
                         </div>
                     </div>
                 </div>
@@ -548,7 +654,7 @@
                         <div class="event-title">Evening Activities</div>
                         <div class="event-note">Join or leave whenever</div>
                         <div class="event-meta">
-                            <span class="event-host">GradSAC</span>
+
                         </div>
                         <div class="activity-options">
                             <div class="activity-option">
@@ -572,9 +678,30 @@
                                 <span class="activity-icon">🧘</span>
                                 <div>
                                     <div class="activity-name">Personal Break / Explore on Your Own</div>
-                                    <div class="activity-meet">No signup — GradSAC on-call for return coordination</div>
+                                    <div class="activity-meet">Feel free to explore Salt Lake City at your own pace</div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Sunday -->
+        <section class="day-section" id="day-sun">
+            <div class="day-header">
+                <span class="day-name">Sunday</span>
+                <span class="day-date">February 22</span>
+            </div>
+            <div class="events">
+
+                <div class="event-card" data-date="2026-02-22">
+                    <div class="event-time">All Day</div>
+                    <div class="event-body">
+                        <div class="event-title">Departure</div>
+                        <div class="event-meta">
+                            <span class="event-location">✈️ Safe travels home!</span>
                         </div>
                     </div>
                 </div>
@@ -587,7 +714,7 @@
 
     <footer class="site-footer">
         <img src="UU Logo-HRZ_RED.svg" alt="University of Utah" class="footer-logo" />
-        <p>Kahlert School of Computing · Visit Weekend 2026</p>
+        <p>Kahlert School of Computing · Graduate Visit Weekend 2026</p>
     </footer>
 
     <script>
@@ -630,15 +757,15 @@
             { date: '2026-02-19', startH: 18, startM: 0, endH: 23, endM: 59, title: 'Arrival + Welcome Dinner', loc: LOCATIONS.marriott },
             { date: '2026-02-20', startH: 7, startM: 30, endH: 8, endM: 0, title: 'Depart from Hotel', loc: LOCATIONS.marriott },
             { date: '2026-02-20', startH: 8, startM: 0, endH: 9, endM: 0, title: 'Breakfast', loc: LOCATIONS.meb },
-            { date: '2026-02-20', startH: 9, startM: 0, endH: 10, endM: 0, title: 'KSoC Facilities Tours', loc: LOCATIONS.meb },
+            { date: '2026-02-20', startH: 9, startM: 0, endH: 10, endM: 0, title: 'KSoC Facilities Tours + Walk by Price Computing Building', loc: LOCATIONS.meb },
             { date: '2026-02-20', startH: 10, startM: 0, endH: 11, endM: 30, title: 'KSoC Research Overview', loc: LOCATIONS.meb },
             { date: '2026-02-20', startH: 11, startM: 30, endH: 12, endM: 0, title: 'Faculty Panel', loc: LOCATIONS.meb },
-            { date: '2026-02-20', startH: 12, startM: 0, endH: 13, endM: 30, title: 'Lunch + Poster Session', loc: LOCATIONS.meb },
-            { date: '2026-02-20', startH: 13, startM: 30, endH: 15, endM: 30, title: 'Faculty + Lab Meetings', loc: { label: 'Meetings Signup', url: null } },
+            { date: '2026-02-20', startH: 12, startM: 0, endH: 13, endM: 30, title: 'Lunch + Poster Session', loc: { label: 'MEB 3rd Floor Hallway', url: 'https://maps.google.com/?q=50+S+Central+Campus+Dr,+Salt+Lake+City,+UT+84112' } },
+            { date: '2026-02-20', startH: 13, startM: 30, endH: 15, endM: 30, title: 'Faculty + Lab Meetings', loc: { label: 'Meeting Availability', url: 'https://docs.google.com/spreadsheets/d/1qts2UAWl5vglenHFcQRy4AZZjWcZGpYZNASt9sGiTAE/edit?usp=sharing' } },
             { date: '2026-02-20', startH: 15, startM: 30, endH: 17, endM: 0, title: 'Campus Tours', loc: LOCATIONS.meb },
-            { date: '2026-02-20', startH: 17, startM: 0, endH: 19, endM: 0, title: 'Dinner w/ Faculty', loc: LOCATIONS.alumni },
-            { date: '2026-02-20', startH: 19, startM: 0, endH: 23, endM: 59, title: 'Return to Hotel', loc: LOCATIONS.alumni },
-            { date: '2026-02-21', startH: 7, startM: 0, endH: 8, endM: 30, title: 'Breakfast w/ GradSAC', loc: LOCATIONS.marriott },
+            { date: '2026-02-20', startH: 17, startM: 0, endH: 19, endM: 0, title: 'Dinner w/ Faculty', loc: { label: 'Henriksen Room at Alumni House', url: 'https://maps.google.com/?q=155+S+Central+Campus+Dr,+Salt+Lake+City,+UT+84112' } },
+            { date: '2026-02-20', startH: 19, startM: 0, endH: 23, endM: 59, title: 'Return to Hotel', loc: LOCATIONS.marriott },
+            { date: '2026-02-21', startH: 7, startM: 0, endH: 8, endM: 30, title: 'Breakfast', loc: LOCATIONS.marriott },
             { date: '2026-02-21', startH: 9, startM: 0, endH: 13, endM: 0, title: 'Morning Activities', loc: LOCATIONS.various },
             { date: '2026-02-21', startH: 12, startM: 0, endH: 13, endM: 0, title: 'Lunch', loc: { label: 'With Activity Group', url: null } },
             { date: '2026-02-21', startH: 13, startM: 0, endH: 19, endM: 0, title: 'Afternoon Activities', loc: LOCATIONS.various },
